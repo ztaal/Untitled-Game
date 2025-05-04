@@ -11,7 +11,7 @@ public class BoltController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedBolt = Instantiate(prefab);
+        GameObject spawnedBolt = Instantiate(weaponData.Prefab);
         spawnedBolt.transform.position = transform.position; // Assign the position to be the same as this object which is paraented to the player
         spawnedBolt.GetComponent<BoltBehaviour>().DirectionChecker(pm.lastMovedVector);
     }
