@@ -77,7 +77,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotation);
     }
 
-
     protected void OnTriggerEnter2D(Collider2D col)
 	{
         if ( col.CompareTag("Enemy"))
@@ -85,7 +84,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(currentDamage);
             ReducePierce();
-
         }
 	}
 
