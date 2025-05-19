@@ -5,8 +5,6 @@ using System.Collections.Generic;
 public class PlayerMovement : MonoBehaviour
 {
     // Variables
-    public float moveSpeed;
-    Rigidbody2D rb;
     public Vector2 moveDir;
     [HideInInspector]
     public float lastHorizontalVector;
@@ -14,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     public float lastVerticalVector;
     [HideInInspector]
     public Vector2 lastMovedVector;
+
+    // References
+    Rigidbody2D rb;
+    public CharacterScriptableObject characterData;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -61,6 +63,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+        rb.linearVelocity = new Vector2(moveDir.x * characterData.MoveSpeed, moveDir.y * characterData.MoveSpeed);
     }
 }

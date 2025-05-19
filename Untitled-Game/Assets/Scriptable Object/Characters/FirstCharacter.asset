@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506afc3bc9864f440afb7ccfb46e8b38, type: 3}
-  m_Name: Orb Weapon
+  m_Script: {fileID: 11500000, guid: f388c3053219a644a98c4e163d37d0ae, type: 3}
+  m_Name: FirstCharacter
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9013581664587013510, guid: 676c611556053a34b8ebd757a5d38daf, type: 3}
-  damage: 20
-  speed: 200
-  cooldownDuration: 0.1
-  pierce: 0
+  startingWeapon: {fileID: 0}
+  maxHealth: 500
+  recovery: 0
+  moveSpeed: 5
+  might: 0
+  projectileSpeed: 0

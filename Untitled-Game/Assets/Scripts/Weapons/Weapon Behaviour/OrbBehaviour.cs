@@ -27,9 +27,9 @@ public class OrbBehaviour : MeleeWeaponBehaviour
             canDealDamage = true;
         }
     }
-    protected virtual void OnTriggerEnter2D(Collider2D col)
+    protected override void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Enemy") && canDealDamage == true)
+        if ( col.CompareTag("Enemy") && canDealDamage == true )
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             enemy.TakeDamage(currentDamage);
@@ -37,6 +37,12 @@ public class OrbBehaviour : MeleeWeaponBehaviour
             /** Reset when the weapon can deal damage. */
             canDealDamage = false;
             currentCooldown = weaponData.CooldownDuration;
+        }
+        else if (col.CompareTag("Prop") && canDealDamage == true )
+        {
+            if (col.gameObject.TryGetComponent(out BreakableProps breakable) ) {
+                breakable.TakeDamage(currentDamage);
+            }
         }
     }
 }
