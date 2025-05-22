@@ -7,11 +7,18 @@ public class PlayerStats : MonoBehaviour
     public CharacterScriptableObject characterData;
 
     // Current Stats
-    float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentRecovery;
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentMight;
+    [HideInInspector]
+    public float currentProjectileSpeed;
+    [HideInInspector]
+    public float currentPickupRadius;
 
     // I-Frames
     [Header("I_Frames")]
@@ -42,6 +49,7 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentPickupRadius = characterData.PickupRadius;
     }
 
     void Start()
@@ -58,6 +66,9 @@ public class PlayerStats : MonoBehaviour
         } else if ( isInvincible ) {
             isInvincible = false;
         }
+
+        /** Regen Health */
+        recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -92,6 +103,18 @@ public class PlayerStats : MonoBehaviour
             /** Heal */
             currentHealth += amount;
 
+            if ( currentHealth > characterData.MaxHealth )
+            {
+                currentHealth = characterData.MaxHealth;
+            }
+        }
+    }
+
+    void recover()
+    {
+        if ( currentHealth < characterData.MaxHealth )
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
             if ( currentHealth > characterData.MaxHealth )
             {
                 currentHealth = characterData.MaxHealth;

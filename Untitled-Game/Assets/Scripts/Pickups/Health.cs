@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour, iCollectible
+public class Health : Pickup
 {
     public int healthToRestore;
 
-    public void Collect()
+    override public void Collect()
     {
         PlayerStats player = FindAnyObjectByType<PlayerStats>();
         player.RestoreHealth(healthToRestore);
-        Destroy(gameObject);
     }
 }

@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class Experience : MonoBehaviour, iCollectible
+public class Experience : Pickup
 {
     public int experienceGranted;
 
-    public void Collect()
+    override public void Collect()
     {
         PlayerStats player = FindAnyObjectByType<PlayerStats>();
         player.IncreaseExperience(experienceGranted);
-        Destroy(gameObject);
     }
 }
