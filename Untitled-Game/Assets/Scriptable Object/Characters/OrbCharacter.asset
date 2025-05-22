@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f388c3053219a644a98c4e163d37d0ae, type: 3}
-  m_Name: FirstCharacter
+  m_Name: OrbCharacter
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
+  startingWeapon: {fileID: 2684220054919090749, guid: a817b501529c92d4bb2202e76d1ad4fc, type: 3}
   maxHealth: 500
   recovery: 1
   moveSpeed: 5

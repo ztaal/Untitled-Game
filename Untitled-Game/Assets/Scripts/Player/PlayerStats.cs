@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public CharacterScriptableObject characterData;
+    CharacterScriptableObject characterData;
 
-    // Current Stats
+    /** Current Stats */
     [HideInInspector]
     public float currentHealth;
     [HideInInspector]
@@ -20,19 +20,22 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public float currentPickupRadius;
 
-    // I-Frames
+    /** Equipped Weapons. */
+    public List<GameObject> equippedWeapons;
+
+    /** I-Frames */
     [Header("I_Frames")]
     public float invincibilityDuration;
     float invincibilityTimer;
     bool isInvincible;
 
-    // Experience 
+    /** Experience */
     [Header("Experience/Level")]
     public int experience = 0;
     public int level = 1;
     public int experienceCap;
 
-    // Class for level ranges
+    /** Class for level ranges */
     [System.Serializable]
     public class LevelRange
     {
@@ -44,12 +47,20 @@ public class PlayerStats : MonoBehaviour
     public List<LevelRange> levelRanges;
     private void Awake()
     {
+        /** Get Character Data */
+    characterData = CharacterSelector.GetData();
+        CharacterSelector.instance.DestroySingleton();
+
+        /** Set Variables */
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
         currentPickupRadius = characterData.PickupRadius;
+
+        /** Set Starting Weapon */
+        EquipWeapon(characterData.StartingWeapon);
     }
 
     void Start()
@@ -146,5 +157,12 @@ public class PlayerStats : MonoBehaviour
     {
         /** \todo add death here later. */
         Debug.Log("YOU DIED");
+    }
+
+    public void EquipWeapon(GameObject weapon)
+    {
+        GameObject newWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        newWeapon.transform.SetParent(transform);
+        equippedWeapons.Add(newWeapon);
     }
 }
