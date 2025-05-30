@@ -662,6 +662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy #1
       objectReference: {fileID: 0}
+    - target: {fileID: 2743377004798909717, guid: 888f3dcf9b7b64f4c90ec196d3a91d37, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6918021802864542221, guid: 888f3dcf9b7b64f4c90ec196d3a91d37, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -719,6 +723,82 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 888f3dcf9b7b64f4c90ec196d3a91d37, type: 3}
+--- !u!1 &1717101981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1717101983}
+  - component: {fileID: 1717101982}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1717101982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717101981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7bd837479ec314e8e17709c8da4eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - waveName: Wave 1
+    enemyGroups:
+    - enemeyName: Enemy Type #1
+      enemyCount: 3
+      spawnCount: 0
+      enemyPrefab: {fileID: 2743377004798909717, guid: 888f3dcf9b7b64f4c90ec196d3a91d37, type: 3}
+    - enemeyName: Enemy Type #2
+      enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 2743377004798909717, guid: 770f6e7dc045bbc4d8ff6eec4f280599, type: 3}
+    waveQuota: 0
+    spawnInterval: 1
+    spawnCount: 0
+  - waveName: Wave 2
+    enemyGroups:
+    - enemeyName: Enemy Type #1
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 2743377004798909717, guid: 888f3dcf9b7b64f4c90ec196d3a91d37, type: 3}
+    - enemeyName: Enemy Type #2
+      enemyCount: 4
+      spawnCount: 0
+      enemyPrefab: {fileID: 2743377004798909717, guid: 770f6e7dc045bbc4d8ff6eec4f280599, type: 3}
+    waveQuota: 0
+    spawnInterval: 1
+    spawnCount: 0
+  currentWaveCount: 0
+  enemiesAlive: 0
+  maxEnemiesAllowed: 100
+  maxEnemiesReached: 0
+  waveInterval: 3
+--- !u!4 &1717101983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717101981}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -727,3 +807,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1283361283}
   - {fileID: 1713232239}
+  - {fileID: 1717101983}

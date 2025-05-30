@@ -48,7 +48,7 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         /** Get Character Data */
-    characterData = CharacterSelector.GetData();
+        characterData = CharacterSelector.GetData();
         CharacterSelector.instance.DestroySingleton();
 
         /** Set Variables */
