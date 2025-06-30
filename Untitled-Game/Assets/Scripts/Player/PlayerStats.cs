@@ -20,9 +20,6 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector]
     public float currentPickupRadius;
 
-    /** Equipped Weapons. */
-    public List<GameObject> equippedWeapons;
-
     /** I-Frames */
     [Header("I_Frames")]
     public float invincibilityDuration;
@@ -45,11 +42,20 @@ public class PlayerStats : MonoBehaviour
     }
 
     public List<LevelRange> levelRanges;
+
+    /** Inventory */
+    InventoryManager inventory;
+    public int weaponIndex;
+    public int passiveItemIndex;
+
     private void Awake()
     {
         /** Get Character Data */
         characterData = CharacterSelector.GetData();
         CharacterSelector.instance.DestroySingleton();
+
+        /** Set Inventory. */
+        inventory = GetComponent<InventoryManager>();
 
         /** Set Variables */
         currentHealth = characterData.MaxHealth;
@@ -161,8 +167,30 @@ public class PlayerStats : MonoBehaviour
 
     public void EquipWeapon(GameObject weapon)
     {
+        /** Check if the maximum number of weapons have already been equiped. */
+        if ( weaponIndex >= inventory.weaponSlots.Count - 1 )
+        {
+            Debug.Log("Inventory is full, cannot add anymore weapons.");
+            return;
+        }
+
         GameObject newWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
         newWeapon.transform.SetParent(transform);
-        equippedWeapons.Add(newWeapon);
+        inventory.AddWeapon(weaponIndex, newWeapon.GetComponent<WeaponController>());
+        weaponIndex++;
+    }
+    public void EquipPassiveItem(GameObject passiveItem)
+    {
+        /** Check if the maximum number of passive items have already been equiped. */
+        if (passiveItemIndex >= inventory.passiveItemsSlots.Count - 1)
+        {
+            Debug.Log("Inventory is full, cannot add anymore passive items.");
+            return;
+        }
+
+        GameObject newPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        newPassiveItem.transform.SetParent(transform);
+        inventory.AddPassiveItem(weaponIndex, newPassiveItem.GetComponent<PassiveItem>());
+        passiveItemIndex++;
     }
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506afc3bc9864f440afb7ccfb46e8b38, type: 3}
+  m_Name: Orb Weapon Level 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9013581664587013510, guid: 676c611556053a34b8ebd757a5d38daf, type: 3}
+  damage: 20
+  speed: 200
+  cooldownDuration: 0.05
+  pierce: 0
+  level: 1
+  nextLevelPrefab: {fileID: 2684220054919090749, guid: 108cefcf88f9f694e9d8413c74674e43, type: 3}
+  icon: {fileID: 6100065733457341597, guid: 19278df97ba6589418e23e2ac9d65045, type: 3}

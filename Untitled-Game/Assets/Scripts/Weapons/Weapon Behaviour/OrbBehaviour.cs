@@ -32,7 +32,7 @@ public class OrbBehaviour : MeleeWeaponBehaviour
         if ( col.CompareTag("Enemy") && canDealDamage == true )
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(GetCurrentDamage());
 
             /** Reset when the weapon can deal damage. */
             canDealDamage = false;
@@ -41,7 +41,7 @@ public class OrbBehaviour : MeleeWeaponBehaviour
         else if (col.CompareTag("Prop") && canDealDamage == true )
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable) ) {
-                breakable.TakeDamage(currentDamage);
+                breakable.TakeDamage(GetCurrentDamage());
             }
         }
     }

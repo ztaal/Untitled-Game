@@ -16,6 +16,6 @@ MonoBehaviour:
   maxHealth: 500
   recovery: 1
   moveSpeed: 10
-  might: 0
-  projectileSpeed: 0
+  might: 1
+  projectileSpeed: 1
   pickupRadius: 1.6

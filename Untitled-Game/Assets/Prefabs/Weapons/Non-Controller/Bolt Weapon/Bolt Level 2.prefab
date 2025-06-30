@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5681309855599037096}
   - component: {fileID: 2747263732868720501}
   m_Layer: 0
-  m_Name: Bolt
+  m_Name: Bolt Level 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.83396226, g: 0.45644838, b: 0.11171948, a: 1}
+  m_Color: {r: 0.83396226, g: 0.34117648, b: 0.11171948, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2710d5b2499136948b2e4a3e48e4f587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 1f2af631514a1334090c1d8d8ce6335c, type: 2}
+  weaponData: {fileID: 11400000, guid: 5c8fdc98e6a9ddf429867f7b3ecd27c0, type: 2}
   lifeTime: 3
 --- !u!60 &5681309855599037096
 PolygonCollider2D:

@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 506afc3bc9864f440afb7ccfb46e8b38, type: 3}
-  m_Name: Orb Weapon
+  m_Name: Bolt Weapon Level 1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9013581664587013510, guid: 676c611556053a34b8ebd757a5d38daf, type: 3}
-  damage: 20
-  speed: 200
-  cooldownDuration: 0.1
-  pierce: 0
+  prefab: {fileID: 1457350006363473390, guid: 8f8a9c5643d0d76438a38916b244cc3e, type: 3}
+  damage: 5
+  speed: 20
+  cooldownDuration: 0.2
+  pierce: 1
+  level: 1
+  nextLevelPrefab: {fileID: 5300116983691578583, guid: 5b96462098d67d04ca998de1b4ff8e3b, type: 3}
+  icon: {fileID: 7482599012979963348, guid: 773b4c81ad9c512438bdd3839768cf07, type: 3}

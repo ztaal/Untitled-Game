@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506afc3bc9864f440afb7ccfb46e8b38, type: 3}
-  m_Name: Bolt Weapon
+  m_Script: {fileID: 11500000, guid: a48b4bf582e30854da2f705806cec5c9, type: 3}
+  m_Name: SpeedPassiveItem Level 2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1457350006363473390, guid: 8f8a9c5643d0d76438a38916b244cc3e, type: 3}
-  damage: 5
-  speed: 20
-  cooldownDuration: 0.2
-  pierce: 1
+  multiplier: 50
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  icon: {fileID: 8517905955207869662, guid: aff95cd26ea915844979b5c9313b1e25, type: 3}
