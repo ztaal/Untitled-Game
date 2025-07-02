@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Orb_Weapon_Icon_0: 6100065733457341597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

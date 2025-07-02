@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bolt_Weapon_Icon_0: 7482599012979963348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
